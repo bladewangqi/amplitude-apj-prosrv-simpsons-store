@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <title>Branch Simpsons Product List</title>
   <script>
+    //make sure dataLayer code is above Google Tag Manager initialize
     dataLayer = [{
       'pageCategory': 'products'
     }];
@@ -110,6 +111,12 @@
     event_and_custom_data,
     content_items);
     };
+
+    function viewProductDetail(sku) {
+        var href = window.location.href;
+        var newHref = href.replace("products.html", "product.html?sku=" + sku);
+        window.location.href = newHref;
+    }
 
     function buyNow(sku) {
         var event_and_custom_data = {
@@ -252,7 +259,7 @@
                                     <button type="button" class="btn btn-primary" onclick="addToCart('BP063-0001')">Add to cart</button>
                                     <button type="button" class="btn btn-primary" onclick="buyNow('BP063-0001')">Buy now</button>
                                 </div>
-                            </div><img src="https://upload.wikimedia.org/wikipedia/en/a/aa/Bart_Simpson_200px.png" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
+                            </div><img src="https://upload.wikimedia.org/wikipedia/en/a/aa/Bart_Simpson_200px.png" onclick="viewProductDetail('BP063-0001')" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
                         </div> <!-- End -->
                     </li> <!-- End -->
                     <!-- list group item-->
@@ -276,7 +283,7 @@
                                     <button type="button" class="btn btn-primary" onclick="addToCart('BP063-0002')">Add to cart</button>
                                     <button type="button" class="btn btn-primary" onclick="buyNow('BP063-0002')">Buy now</button>
                                 </div>
-                            </div><img src="https://upload.wikimedia.org/wikipedia/en/e/ec/Lisa_Simpson.png" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
+                            </div><img src="https://upload.wikimedia.org/wikipedia/en/e/ec/Lisa_Simpson.png" onclick="viewProductDetail('BP063-0002')" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
                         </div> <!-- End -->
                     </li> <!-- End -->
                     <!-- list group item -->
@@ -300,7 +307,7 @@
                                     <button type="button" class="btn btn-primary" onclick="addToCart('BP063-0003')">Add to cart</button>
                                     <button type="button" class="btn btn-primary" onclick="buyNow('BP063-0003')">Buy now</button>
                                 </div>
-                            </div><img src="https://static.onecms.io/wp-content/uploads/sites/6/2010/06/homer-simpson_235.jpg" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
+                            </div><img src="https://static.onecms.io/wp-content/uploads/sites/6/2010/06/homer-simpson_235.jpg" onclick="viewProductDetail('BP063-0003')" alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
                         </div> <!-- End -->
                     </li> <!-- End -->
                     <!-- list group item -->
