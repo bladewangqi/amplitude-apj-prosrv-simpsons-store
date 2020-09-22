@@ -53,7 +53,200 @@
         // load Branch
         (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking".split(" "), 0);
         branch.init('key_live_hbSHp4Ukk6L07eE9sRSTYjdkwAcDbpoG');
-      </script>
+
+        function addToCart() {
+            var event_and_custom_data = {
+            "transaction_id": Math.random().toString(36).substr(2, 9),
+            "currency": "USD",
+            "shipping": 10.5,
+            "description": "Add" + sku + "to cart",
+            "purchase_loc": "Palo Alto",
+            };
+            if(sku === 'BP063-0001') {
+                event_and_custom_data["revenue"] = 50*0.15;
+                event_and_custom_data["tax"] = 50*0.09;
+                var content_items = [
+                    {
+                    "$og_title": "Bart Simpson Test title",
+                    "$og_description": "none",
+                    "$canonical_identifier": "item/BP063-0001",
+                    "$price": 50,
+                    "$quantity": 1,
+                    "$sku": "BP063-0001",
+                    "$product_name": "Bart Simpsons Toy",
+                    "$product_brand": "Brand Bart",
+                    "$product_category": "Toys & Games",
+                    "$rating_average": 4.2,
+                    "$rating_count": 5,
+                    "$address_city": "Chicago",
+                    "$address_region": "IL",
+                    "$address_country": "US",
+                    "$address_postal_code": "60604",
+                    "$latitude": 12.07,
+                    "$longitude": -97.5,
+                    "$condition": "NEW",
+                    "$custom_fields": {"foo1":"bar1","foo2":"bar2"}
+                    }
+                ];
+            } else if(sku === 'BP063-0002') {
+                event_and_custom_data["revenue"] = 99.99*0.15;
+                event_and_custom_data["tax"] = 99.99*0.09;
+                var content_items = [
+                    {
+                    "$og_title": "Lisa Simpson Test title",
+                    "$og_description": "none",
+                    "$canonical_identifier": "item/BP063-0002",
+                    "$price": 99.99,
+                    "$quantity": 1,
+                    "$sku": "BP063-0002",
+                    "$product_name": "Lisa Simpsons Toy",
+                    "$product_brand": "Brand Lisa",
+                    "$product_category": "Toys & Games",
+                    "$rating_average": 4.1,
+                    "$rating_count": 5,
+                    "$address_city": "Chicago",
+                    "$address_region": "IL",
+                    "$address_country": "US",
+                    "$address_postal_code": "60604",
+                    "$latitude": 12.07,
+                    "$longitude": -97.5,
+                    "$condition": "NEW",
+                    "$custom_fields": {"foo1":"bar1","foo2":"bar2"}
+                    }
+                ];
+            } else {
+                event_and_custom_data["revenue"] = 150*0.15;
+                event_and_custom_data["tax"] = 150*0.09;
+                var content_items = [
+                    {
+                    "$og_title": "Homer Simpson Test title",
+                    "$og_description": "none",
+                    "$canonical_identifier": "item/BP063-0003",
+                    "$price": 150,
+                    "$quantity": 1,
+                    "$sku": "BP063-0003",
+                    "$product_name": "Homer Simpsons Toy",
+                    "$product_brand": "Brand Homer",
+                    "$product_category": "Toys & Games",
+                    "$rating_average": 4.3,
+                    "$rating_count": 5,
+                    "$address_city": "Chicago",
+                    "$address_region": "IL",
+                    "$address_country": "US",
+                    "$address_postal_code": "60604",
+                    "$latitude": 12.07,
+                    "$longitude": -97.5,
+                    "$condition": "NEW",
+                    "$custom_fields": {"foo1":"bar1","foo2":"bar2"}
+                    }
+                ];
+            }
+            var customer_event_alias = "my custom alias";
+            branch.logEvent(
+            "ADD_TO_CART",
+            event_and_custom_data,
+            content_items);
+        };
+
+        function buyNow() {
+            var event_and_custom_data = {
+            "transaction_id": Math.random().toString(36).substr(2, 9),
+            "currency": "USD",
+            "shipping": 10.5,
+            "description": "Purcahse" + sku,
+            "purchase_loc": "Palo Alto",
+            };
+            var customer_event_alias = "puchase kids";
+            if(sku === 'BP063-0001') {
+                event_and_custom_data["revenue"] = 50*0.15;
+                event_and_custom_data["tax"] = 50*0.09;
+                dataLayer.push({'productRevenue': 50*0.15});
+                var content_items = [
+                    {
+                    "$og_title": "Bart Simpson Test title",
+                    "$og_description": "none",
+                    "$canonical_identifier": "item/BP063-0001",
+                    "$price": 50,
+                    "$quantity": 1,
+                    "$sku": "BP063-0001",
+                    "$product_name": "Bart Simpsons Toy",
+                    "$product_brand": "Brand Bart",
+                    "$product_category": "Toys & Games",
+                    "$rating_average": 4.2,
+                    "$rating_count": 5,
+                    "$address_city": "Chicago",
+                    "$address_region": "IL",
+                    "$address_country": "US",
+                    "$address_postal_code": "60604",
+                    "$latitude": 12.07,
+                    "$longitude": -97.5,
+                    "$condition": "NEW",
+                    "$custom_fields": {"foo1":"bar1","foo2":"bar2"}
+                    }
+                ];
+            } else if(sku === 'BP063-0002') {
+                event_and_custom_data["revenue"] = 99.99*0.15;
+                event_and_custom_data["tax"] = 99.99*0.09;
+                dataLayer.push({'productRevenue': 99.99*0.15});
+                var content_items = [
+                    {
+                    "$og_title": "Lisa Simpson Test title",
+                    "$og_description": "none",
+                    "$canonical_identifier": "item/BP063-0002",
+                    "$price": 99.99,
+                    "$quantity": 1,
+                    "$sku": "BP063-0002",
+                    "$product_name": "Lisa Simpsons Toy",
+                    "$product_brand": "Brand Lisa",
+                    "$product_category": "Toys & Games",
+                    "$rating_average": 4.1,
+                    "$rating_count": 5,
+                    "$address_city": "Chicago",
+                    "$address_region": "IL",
+                    "$address_country": "US",
+                    "$address_postal_code": "60604",
+                    "$latitude": 12.07,
+                    "$longitude": -97.5,
+                    "$condition": "NEW",
+                    "$custom_fields": {"foo1":"bar1","foo2":"bar2"}
+                    }
+                ];
+            } else {
+                customer_event_alias = "puchase daddy";
+                event_and_custom_data["revenue"] = 150*0.15;
+                event_and_custom_data["tax"] = 150*0.09;
+                dataLayer.push({'productRevenue': 150*0.15});
+                var content_items = [
+                    {
+                    "$og_title": "Homer Simpson Test title",
+                    "$og_description": "none",
+                    "$canonical_identifier": "item/BP063-0003",
+                    "$price": 150,
+                    "$quantity": 1,
+                    "$sku": "BP063-0003",
+                    "$product_name": "Homer Simpsons Toy",
+                    "$product_brand": "Brand Homer",
+                    "$product_category": "Toys & Games",
+                    "$rating_average": 4.3,
+                    "$rating_count": 5,
+                    "$address_city": "Chicago",
+                    "$address_region": "IL",
+                    "$address_country": "US",
+                    "$address_postal_code": "60604",
+                    "$latitude": 12.07,
+                    "$longitude": -97.5,
+                    "$condition": "NEW",
+                    "$custom_fields": {"foo1":"bar1","foo2":"bar2"}
+                    }
+                ];
+            }
+            branch.logEvent(
+            "PURCHASE",
+            event_and_custom_data,
+            content_items,
+            customer_event_alias);
+        };
+    </script>
     <style>
         /*****************globals*************/
         body {
@@ -279,8 +472,8 @@
 							<span class="size" data-toggle="tooltip" title="medium">m</span>
 						</h5>
 						<div class="action">
-                            <button class="btn btn-primary" type="button">add to cart</button>
-                            <button class="btn btn-primary" type="button">buy now</button>
+                            <button class="btn btn-primary" type="button" onclick="addToCart()">add to cart</button>
+                            <button class="btn btn-primary" type="button" onclick="buyNow()">buy now</button>
 							<!-- <button class="btn btn-primary" type="button"><span class="fa fa-heart"></span></button> -->
 						</div>
 					</div>
