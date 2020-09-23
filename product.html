@@ -35,7 +35,8 @@
         }
         //make sure dataLayer code is above Google Tag Manager initialize
         dataLayer = [{
-          'pageCategory': 'product'
+          'pageCategory': 'product',
+          'productSKU': sku
         }];
         window.onload = function() {
             what();
