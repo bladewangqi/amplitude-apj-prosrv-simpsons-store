@@ -15,8 +15,8 @@
     // load Google Tag Manager
     (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer','GTM-MJPMJZP');
     // load Branch
-    (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking".split(" "), 0);
-    branch.init('key_live_hbSHp4Ukk6L07eE9sRSTYjdkwAcDbpoG');
+    // (function(b,r,a,n,c,h,_,s,d,k){if(!b[n]||!b[n]._q){for(;s<_.length;)c(h,_[s++]);d=r.createElement(a);d.async=1;d.src="https://cdn.branch.io/branch-latest.min.js";k=r.getElementsByTagName(a)[0];k.parentNode.insertBefore(d,k);b[n]=h}})(window,document,"script","branch",function(b,r){b[r]=function(){b._q.push([r,arguments])}},{_q:[],_v:1},"addListener applyCode autoAppIndex banner closeBanner closeJourney creditHistory credits data deepview deepviewCta first getCode init link logout redeem referrals removeListener sendSMS setBranchViewData setIdentity track validateCode trackCommerceEvent logEvent disableTracking".split(" "), 0);
+    // branch.init('key_live_hbSHp4Ukk6L07eE9sRSTYjdkwAcDbpoG');
     
     function addToCart(sku) {
     var event_and_custom_data = {
@@ -106,11 +106,11 @@
         ];
     }
     var customer_event_alias = "my custom alias";
-    branch.logEvent(
-    "ADD_TO_CART",
-    event_and_custom_data,
-    content_items);
-    };
+    // branch.logEvent(
+    // "ADD_TO_CART",
+    // event_and_custom_data,
+    // content_items);
+    // };
 
     function viewProductDetail(sku) {
         var href = window.location.href;
@@ -207,11 +207,11 @@
                 }
             ];
         }
-        branch.logEvent(
-        "PURCHASE",
-        event_and_custom_data,
-        content_items,
-        customer_event_alias);
+        // branch.logEvent(
+        // "PURCHASE",
+        // event_and_custom_data,
+        // content_items,
+        // customer_event_alias);
     };
   </script>
 </head>
