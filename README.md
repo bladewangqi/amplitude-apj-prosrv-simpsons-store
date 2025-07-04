@@ -37,6 +37,48 @@ test-web/
 - **Live Server Extension** for VS Code
 - **Git** for version control
 
+### Installing Git on Mac
+
+#### Method 1: Using Homebrew (Recommended)
+
+1. **Install Homebrew** (if not already installed):
+   ```bash
+   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+   ```
+
+2. **Install Git using Homebrew**:
+   ```bash
+   brew install git
+   ```
+
+#### Method 2: Download from Git Website
+
+1. Go to [https://git-scm.com/download/mac](https://git-scm.com/download/mac)
+2. Download the latest version for macOS
+3. Run the installer and follow the setup wizard
+
+#### Verify Git Installation
+
+After installation, verify Git is working:
+```bash
+git --version
+```
+
+You should see output like: `git version 2.39.0` (version number may vary)
+
+#### Configure Git (First Time Setup)
+
+```bash
+# Set your name
+git config --global user.name "Your Full Name"
+
+# Set your email
+git config --global user.email "your.email@example.com"
+
+# Verify configuration
+git config --list
+```
+
 ### 1. Install Live Server Extension
 
 #### Via VS Code Extensions Panel (Recommended)
