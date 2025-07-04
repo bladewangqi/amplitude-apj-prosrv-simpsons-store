@@ -63,10 +63,10 @@ Once installed, you can use Live Server in several ways:
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/bladewangqi/amplitude-apj-prosrv-simpsons-store.git
 
 # Navigate to the project directory
-cd test-web
+cd amplitude-apj-prosrv-simpsons-store
 
 # Open in VS Code
 code .
@@ -78,11 +78,6 @@ code .
 2. **Use Live Server** to preview changes in real-time
 3. **Test all functionality**: cart, checkout, navigation
 4. **Commit your changes**:
-
-```bash
-git add .
-git commit -m "Description of your changes"
-```
 
 ## 📤 Creating Your Own Repository
 
